@@ -1,0 +1,7 @@
+{
+  "tool_name": "PowerShell",
+  "tool_input_preview": "{\"command\":\"Set-Location 'C:\\\\Users\\\\bedel\\\\OneDrive\\\\Desktop\\\\AquaBro'; if (Test-Path .venv) { Remove-Item .venv -Recurse -Force }; py -3.12 -m venv .venv; if ($?) { & .venv\\\\Scripts\\\\python.exe -m p...",
+  "error": "Exit code 6\n[ERROR] No runtime installed that matches 3.12. Try running \"py install 3.12\".",
+  "timestamp": "2026-06-24T18:19:39.247Z",
+  "retry_count": 1
+}

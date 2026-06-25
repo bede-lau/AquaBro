@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "entries": {
+    "466399dafa2d20f60587180bad0a07358eb7f2bce724df0ff682f038ad33f5ad": {
+      "last_emitted_at_ms": 1782339412992,
+      "message": "Read multiple files in parallel when possible for faster analysis."
+    },
+    "79a93d4a2f8f50b95f852280616242fee1855dc99a3c75211917f55e72e95fae": {
+      "last_emitted_at_ms": 1782339410223,
+      "message": "Use parallel execution for independent tasks. Use run_in_background for long operations (npm install, builds, tests)."
+    },
+    "445ed27a3872b681d98190bae61ccb84954e1bc4e140df5370be958dee776b3a": {
+      "last_emitted_at_ms": 1782336641863,
+      "message": "Verify changes work after editing. Test functionality before marking complete."
+    },
+    "b3ca7dd4f2d74f429ca574194572e4d2204647b492770d0ba3eaed19eb41d695": {
+      "last_emitted_at_ms": 1782336292736,
+      "message": "Spawning agent: executor (opus) [BACKGROUND] | Task: Build backend Telegram agent + narrative"
+    },
+    "459c54e5f35d6a58dcd90d2aecc21fa6d1f35d241bc5b134c506f87dc7b6d67b": {
+      "last_emitted_at_ms": 1782335822242,
+      "message": "Combine searches in parallel when investigating multiple patterns."
+    }
+  },
+  "updated_at": "2026-06-24T22:16:52.992Z"
+}

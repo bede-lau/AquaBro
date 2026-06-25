@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/api.ts","./src/main.tsx","./src/types.ts","./src/util.ts","./src/components/actuatorschematic.tsx","./src/components/demobar.tsx","./src/components/narrativefeed.tsx","./src/components/statuspill.tsx","./src/components/visioncard.tsx","./src/components/vitals.tsx","./src/components/voiceoverlay.tsx","./src/hooks/usestream.ts"],"version":"5.9.3"}

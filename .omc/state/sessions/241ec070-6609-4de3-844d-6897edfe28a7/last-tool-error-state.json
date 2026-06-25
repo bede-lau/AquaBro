@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"cd \\\"C:/Users/bedel/OneDrive/Desktop/AquaBro/data/clips\\\" && keep1=\\\"2019-02-21_06-52-16to2019-02-21_06-52-34_1.avi\\\" keep2=\\\"2019-02-20_19-23-53to2019-02-20_19-24-12_1.avi\\\" keep3=\\\"2019-...",
+  "error": "Exit code 2\n/usr/bin/bash: eval: line 1: syntax error near unexpected token `;'\n/usr/bin/bash: eval: line 1: `cd \"C:/Users/bedel/OneDrive/Desktop/AquaBro/data/clips\" && keep1=\"2019-02-21_06-52-16to2019-02-21_06-52-34_1.avi\" keep2=\"2019-02-20_19-23-53to2019-02-20_19-24-12_1.avi\" keep3=\"2019-02-20_19-19-23to2019-02-20_19-19-40_1.avi\" && for f in *.avi; do case \"$f\" in \"$keep1\" |\"$keep2\"|\"$keep3\") echo \"keep  $f\"; ; *) rm \"$f\" && echo \"drop  $f\"; ; esac; done && cd \"C:/Users/bedel/OneDrive/Desktop/...",
+  "timestamp": "2026-06-24T17:25:34.207Z",
+  "retry_count": 1
+}

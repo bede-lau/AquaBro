@@ -1,0 +1,23 @@
+# Local infra for AquaBro. Postgres only — causal "graph" lives in-memory
+# in the Python process (see backend/app/causal/graph.py), so no Neo4j needed.
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: aquabro-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-aquabro}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-aquabro}
+      POSTGRES_DB: ${POSTGRES_DB:-aquabro}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - aquabro_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-aquabro}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  aquabro_pgdata:

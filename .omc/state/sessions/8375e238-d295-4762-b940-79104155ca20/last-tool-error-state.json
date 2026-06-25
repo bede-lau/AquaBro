@@ -1,0 +1,7 @@
+{
+  "tool_name": "PowerShell",
+  "tool_input_preview": "{\"command\":\".\\\\.venv\\\\Scripts\\\\Activate.ps1; pip install -r backend\\\\requirements.txt\",\"timeout\":120000,\"description\":\"Install backend dependencies using PowerShell syntax\"}",
+  "error": "Exit code 1\nCollecting fastapi==0.115.6 (from -r backend\\requirements.txt (line 2))\r\n  Using cached fastapi-0.115.6-py3-none-any.whl.metadata (27 kB)\r\nCollecting uvicorn==0.34.0 (from uvicorn[standard]==0.34.0->-r backend\\requirements.txt (line 3))\r\n  Using cached uvicorn-0.34.0-py3-none-any.whl.metadata (6.5 kB)\r\nCollecting sse-starlette==2.2.1 (from -r backend\\requirements.txt (line 4))\r\n  Using cached sse_starlette-2.2.1-py3-none-any.whl.metadata (7.8 kB)\r\nCollecting sqlalchemy==2.0.36 (from ...",
+  "timestamp": "2026-06-24T15:22:51.564Z",
+  "retry_count": 2
+}

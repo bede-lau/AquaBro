@@ -1,0 +1,432 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1782313666452,
+  "projectRoot": "C:\\Users\\bedel\\OneDrive\\Desktop\\AquaBro",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": "cd \"C:/Users/bedel/OneDrive/Desktop/AquaBro\" && PYTHONIOENCODING=utf-8 PYTHONPATH=backend .venv/Scripts/python.exe -c \"import app.main; from app.schemas import TankState; f=TankState.model_fields; print('power_w/energy_wh:', 'power_w' in f, 'energy_wh' in f)\" && PYTHONIOENCODING=utf-8 PYTHONPATH=backend .venv/Scripts/python.exe -m pytest backend/tests -q 2>&1 | tail -3",
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "docs"
+    ],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "backend": {
+      "path": "backend",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1782313666423,
+      "keyFiles": [
+        "requirements.txt"
+      ]
+    },
+    "data": {
+      "path": "data",
+      "purpose": "Data files",
+      "fileCount": 1,
+      "lastAccessed": 1782313666423,
+      "keyFiles": []
+    },
+    "docs": {
+      "path": "docs",
+      "purpose": "Documentation",
+      "fileCount": 1,
+      "lastAccessed": 1782313666424,
+      "keyFiles": [
+        "MANUAL_TASKS.md"
+      ]
+    },
+    "frontend": {
+      "path": "frontend",
+      "purpose": null,
+      "fileCount": 10,
+      "lastAccessed": 1782313666424,
+      "keyFiles": [
+        "index.html",
+        "package-lock.json",
+        "package.json",
+        "tsconfig.json",
+        "tsconfig.node.json"
+      ]
+    },
+    "skills": {
+      "path": "skills",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1782313666425,
+      "keyFiles": []
+    },
+    "backend\\app": {
+      "path": "backend\\app",
+      "purpose": "Application code",
+      "fileCount": 8,
+      "lastAccessed": 1782313666425,
+      "keyFiles": [
+        "config.py",
+        "db.py",
+        "engine.py"
+      ]
+    },
+    "backend\\tests": {
+      "path": "backend\\tests",
+      "purpose": "Test files",
+      "fileCount": 5,
+      "lastAccessed": 1782313666426,
+      "keyFiles": [
+        "conftest.py",
+        "test_agents_pipeline.py",
+        "test_fsm.py"
+      ]
+    },
+    "frontend\\dist": {
+      "path": "frontend\\dist",
+      "purpose": "Distribution/build output",
+      "fileCount": 1,
+      "lastAccessed": 1782313666427,
+      "keyFiles": [
+        "index.html"
+      ]
+    },
+    "frontend\\node_modules": {
+      "path": "frontend\\node_modules",
+      "purpose": "Dependencies",
+      "fileCount": 1,
+      "lastAccessed": 1782313666427,
+      "keyFiles": []
+    },
+    "frontend\\src": {
+      "path": "frontend\\src",
+      "purpose": "Source code",
+      "fileCount": 6,
+      "lastAccessed": 1782313666428,
+      "keyFiles": [
+        "api.ts",
+        "App.tsx",
+        "index.css"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "backend\\app\\engine.py",
+      "accessCount": 34,
+      "lastAccessed": 1782350213019,
+      "type": "directory"
+    },
+    {
+      "path": "backend\\app\\main.py",
+      "accessCount": 9,
+      "lastAccessed": 1782349068668,
+      "type": "file"
+    },
+    {
+      "path": ".env",
+      "accessCount": 8,
+      "lastAccessed": 1782350019065,
+      "type": "file"
+    },
+    {
+      "path": "frontend\\src\\types.ts",
+      "accessCount": 7,
+      "lastAccessed": 1782350052965,
+      "type": "file"
+    },
+    {
+      "path": "backend\\app\\config.py",
+      "accessCount": 6,
+      "lastAccessed": 1782336413598,
+      "type": "file"
+    },
+    {
+      "path": "backend\\app\\schemas.py",
+      "accessCount": 6,
+      "lastAccessed": 1782350020152,
+      "type": "file"
+    },
+    {
+      "path": "frontend\\src\\App.tsx",
+      "accessCount": 6,
+      "lastAccessed": 1782350054999,
+      "type": "file"
+    },
+    {
+      "path": "frontend\\src\\hooks\\useStream.ts",
+      "accessCount": 5,
+      "lastAccessed": 1782348516187,
+      "type": "file"
+    },
+    {
+      "path": "frontend\\src\\api.ts",
+      "accessCount": 5,
+      "lastAccessed": 1782349088237,
+      "type": "file"
+    },
+    {
+      "path": "README.md",
+      "accessCount": 5,
+      "lastAccessed": 1782350382686,
+      "type": "file"
+    },
+    {
+      "path": "_diag_cv.py",
+      "accessCount": 4,
+      "lastAccessed": 1782314675809,
+      "type": "file"
+    },
+    {
+      "path": "backend\\app\\vision\\detector.py",
+      "accessCount": 4,
+      "lastAccessed": 1782328757624,
+      "type": "file"
+    },
+    {
+      "path": "backend\\requirements.txt",
+      "accessCount": 4,
+      "lastAccessed": 1782336566594,
+      "type": "file"
+    },
+    {
+      "path": "frontend\\src\\index.css",
+      "accessCount": 4,
+      "lastAccessed": 1782349177383,
+      "type": "file"
+    },
+    {
+      "path": "plan.txt",
+      "accessCount": 4,
+      "lastAccessed": 1782350382858,
+      "type": "file"
+    },
+    {
+      "path": "backend\\app\\integrations\\elevenlabs_voice.py",
+      "accessCount": 3,
+      "lastAccessed": 1782335822867,
+      "type": "file"
+    },
+    {
+      "path": "backend\\app\\integrations\\telegram.py",
+      "accessCount": 3,
+      "lastAccessed": 1782336413266,
+      "type": "file"
+    },
+    {
+      "path": "frontend\\src\\util.ts",
+      "accessCount": 3,
+      "lastAccessed": 1782348516255,
+      "type": "file"
+    },
+    {
+      "path": "frontend\\src\\components\\VoiceOverlay.tsx",
+      "accessCount": 3,
+      "lastAccessed": 1782350057749,
+      "type": "file"
+    },
+    {
+      "path": "backend\\app\\agents\\telemetry.py",
+      "accessCount": 3,
+      "lastAccessed": 1782350062301,
+      "type": "directory"
+    },
+    {
+      "path": ".env.example",
+      "accessCount": 3,
+      "lastAccessed": 1782350382794,
+      "type": "file"
+    },
+    {
+      "path": "_extract.py",
+      "accessCount": 2,
+      "lastAccessed": 1782314481131,
+      "type": "file"
+    },
+    {
+      "path": "backend\\scripts\\generate_telemetry_csv.py",
+      "accessCount": 2,
+      "lastAccessed": 1782333608002,
+      "type": "file"
+    },
+    {
+      "path": "backend\\app\\integrations\\openweather.py",
+      "accessCount": 2,
+      "lastAccessed": 1782333640492,
+      "type": "file"
+    },
+    {
+      "path": "backend\\app\\sse.py",
+      "accessCount": 2,
+      "lastAccessed": 1782336413445,
+      "type": "file"
+    },
+    {
+      "path": "frontend\\src\\components\\Vitals.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1782348517270,
+      "type": "file"
+    },
+    {
+      "path": "backend\\app\\agents\\action.py",
+      "accessCount": 2,
+      "lastAccessed": 1782350082428,
+      "type": "file"
+    },
+    {
+      "path": "backend\\app\\agents\\causal.py",
+      "accessCount": 2,
+      "lastAccessed": 1782350127787,
+      "type": "file"
+    },
+    {
+      "path": "_ziplist.py",
+      "accessCount": 1,
+      "lastAccessed": 1782313685279,
+      "type": "file"
+    },
+    {
+      "path": "_zipinspect.py",
+      "accessCount": 1,
+      "lastAccessed": 1782313879858,
+      "type": "file"
+    },
+    {
+      "path": "_smoke_clips.py",
+      "accessCount": 1,
+      "lastAccessed": 1782314149828,
+      "type": "file"
+    },
+    {
+      "path": "start.bat",
+      "accessCount": 1,
+      "lastAccessed": 1782314356013,
+      "type": "file"
+    },
+    {
+      "path": "docs\\MANUAL_TASKS.md",
+      "accessCount": 1,
+      "lastAccessed": 1782321434892,
+      "type": "file"
+    },
+    {
+      "path": "_rank.py",
+      "accessCount": 1,
+      "lastAccessed": 1782321888744,
+      "type": "file"
+    },
+    {
+      "path": "backend\\app\\vision\\broadcaster.py",
+      "accessCount": 1,
+      "lastAccessed": 1782328757568,
+      "type": "file"
+    },
+    {
+      "path": "backend\\app\\db.py",
+      "accessCount": 1,
+      "lastAccessed": 1782328758037,
+      "type": "file"
+    },
+    {
+      "path": "backend",
+      "accessCount": 1,
+      "lastAccessed": 1782328797725,
+      "type": "directory"
+    },
+    {
+      "path": "frontend\\vite.config.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782328855367,
+      "type": "file"
+    },
+    {
+      "path": "frontend\\src",
+      "accessCount": 1,
+      "lastAccessed": 1782333511254,
+      "type": "directory"
+    },
+    {
+      "path": "frontend\\package.json",
+      "accessCount": 1,
+      "lastAccessed": 1782333544899,
+      "type": "file"
+    },
+    {
+      "path": "skills\\impeccable\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1782335775723,
+      "type": "file"
+    },
+    {
+      "path": "skills\\interface-design\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1782335775771,
+      "type": "file"
+    },
+    {
+      "path": "skills\\anthropic-architect\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1782335775826,
+      "type": "file"
+    },
+    {
+      "path": "skills\\context-optimizer\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1782335775927,
+      "type": "file"
+    },
+    {
+      "path": "frontend\\src\\components\\HardwarePanel.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1782335802395,
+      "type": "file"
+    },
+    {
+      "path": "frontend\\src\\components\\TelemetryPanel.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1782335802464,
+      "type": "file"
+    },
+    {
+      "path": "backend\\app\\integrations\\__init__.py",
+      "accessCount": 1,
+      "lastAccessed": 1782336413511,
+      "type": "file"
+    },
+    {
+      "path": "backend\\app\\integrations\\llm_client.py",
+      "accessCount": 1,
+      "lastAccessed": 1782336423510,
+      "type": "file"
+    },
+    {
+      "path": "backend\\app\\integrations\\telegram_bot.py",
+      "accessCount": 1,
+      "lastAccessed": 1782336458885,
+      "type": "file"
+    },
+    {
+      "path": "frontend\\src\\components\\StatusPill.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1782336534917,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

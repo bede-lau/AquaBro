@@ -1,0 +1,35 @@
+# ── AquaBro backend deps ────────────────────────────────────────────
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+sse-starlette==2.2.1
+
+# DB
+sqlalchemy[asyncio]==2.0.36
+asyncpg==0.30.0
+
+# Config / validation
+pydantic==2.10.4
+pydantic-settings==2.7.1
+python-dotenv==1.0.1
+
+# HTTP clients (OpenWeather, Telegram, ElevenLabs webhooks)
+httpx==0.28.1
+
+# LLM agent (OpenAI-compatible; powers 2-way Telegram operator bot)
+openai>=1.40
+
+# Vision
+opencv-python==4.11.0.86
+numpy==2.2.1
+# Optional real detector (uncomment if VISION_DETECTOR=yolo):
+# ultralytics==8.3.57
+
+# Voice (Conversational AI) — optional, only if VOICE_ENABLED=true
+elevenlabs==1.50.3
+
+# Utils
+anyio==4.7.0
+
+# ── Dev / test ──────────────────────────────────────────────────────
+pytest==8.3.4
+pytest-asyncio==0.25.0

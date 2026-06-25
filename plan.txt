@@ -1,0 +1,164 @@
+# AquaBro AI: Comprehensive Project Specification & Coding Agent Blueprint
+
+## 1. Executive Summary & Hackathon Context
+**Project Name:** AquaPulse AI
+**Domain:** AI for the Physical World
+**Core Objective:** Build a hybrid, fault-tolerant AI system that operates reliably in messy, high-stakes physical environments (commercial Recirculating Aquaculture Systems - RAS) where software failures, sensor drift, and latency result in catastrophic biological and financial losses.
+**Target Audience:** Commercial aquaculture farm operators (specifically tailored to intensive, high-density environments as validated in the Malaysian aquaculture sector).
+**Infrastructure Stack:** Python (Backend Services), Node.js/TypeScript (Voice/Hardware webhooks), React Native / Web (Frontend), PostgreSQL (Time-series & Relational Data), Neo4j (Biochemical Causal Graph), it will run locally.
+
+---
+
+## 2. System Architecture: The Multi-Agent Reasoning Loop
+
+The system moves away from a standard LLM wrapper to a deterministic, multi-agent predictive simulation and risk-mitigation framework. 
+
+### 2.1 The Telemetry Verification Agent
+* **Role:** Ingests raw physical IoT streams (Dissolved Oxygen, pH, Temperature).
+* **Agentic Logic:** Cross-references covariant metrics. If DO drops to absolute zero but pH remains perfectly stable, it flags a potential sensor short-circuit rather than an immediate biological crash. 
+* **Data Sink:** Writes verified data streams to PostgreSQL.
+
+### 2.2 The Vision Behavior Agent
+* **Role:** Processes real-time (or simulated video) feeds using an edge Computer Vision model (e.g., YOLOv8).
+* **Agentic Logic:** Calculates spatial distribution and motion vectors of the biomass. It tracks "surface piping" (gasping for air) or lethargy (clustering at the bottom). Serves as the biological ground truth when hardware sensors fail.
+* **Data Source:** `BrackishMOT` or `Zenodo Tilapia-RAS Dataset` simulating live RTSP streams.
+
+### 2.3 The Context Agent
+* **Role:** Aggregates asynchronous environmental metadata.
+* **Agentic Logic:** 1.  Queries OpenWeatherMap API for localized ambient conditions (Puchong, Selangor: lat 3.0333, lon 101.6158).
+    2.  Queries PostgreSQL for the most recent automated feed logs (calculating current organic load).
+
+### 2.4 The Causal Diagnostics Agent (The Graph Brain)
+* **Role:** The core reasoning engine. Maps the verified inputs against a predefined biochemical knowledge graph (Neo4j).
+* **Agentic Logic:** Synthesizes the chemical formulas and biological thresholds to forecast risk-mitigation strategies. If a threat is detected, it passes a structured JSON intent to the Action Planner.
+
+### 2.5 The Action Planner Agent
+* **Role:** The physical-world interface. Translates diagnostic intents into deterministic API payloads.
+* **Agentic Logic:** Dispatches localized HTTP POST requests to simulated hardware (aerators, feed valves), pushes Telegram alert payloads, and triggers the ElevenLabs Voice Agent webhook.
+
+---
+
+## 3. Mathematical & Biological Models
+
+The AI must execute these explicit mathematical models to determine risk, bypassing generic LLM hallucinations.
+
+### 3.1 Un-Ionized Ammonia ($NH_3$) Toxicity Equation
+Standard sensors measure Total Ammonia Nitrogen (TAN). The agent must calculate the toxic fraction based on shifting pH and temperature.
+
+**Formula:**
+$$Fraction\_of\_NH_3 = \frac{1}{10^{pK_a - pH} + 1}$$
+
+**Variables & Context:**
+* $pH$: Read from PostgreSQL telemetry. Logarithmic scale (small shifts are highly volatile).
+* $pK_a$: Acid dissociation constant. Inversely proportional to water temperature (fetched via Telemetry or estimated via OpenWeatherMap ambient temp).
+* **Logic Gate:** If $Fraction\_of\_NH_3 \times TAN > 0.05$ mg/L, trigger `CRITICAL_TOXICITY_ALERT`.
+
+### 3.2 Hypoxia Time-to-Mortality Threshold
+* **Condition:** $DO \le 1.5$ mg/L AND Vision Agent confirms lethargy.
+* **Formula:** $T_{critical} \le 180$ seconds.
+* **Action:** Immediate webhook execution to simulated Aerator APIs (Override standard alert protocols).
+
+### 3.3 Organic Load Reduction (Feed Valve Control)
+* **Condition:** Predictive toxicity slope is positive.
+* **Action:** $\text{Feed Rate}_{new} = \text{Feed Rate}_{current} \times 0.5$. Locks physical feed valves via Action Agent.
+
+---
+
+## 4. Data Sources & Real-World Inputs
+
+### 4.1 Vision / CV Datasets
+* **Zenodo Tilapia-RAS Dataset (DOI: 10.5281/zenodo.17518786):** Use the 30-second `.mp4` video clips. This dataset provides perfectly synchronized physical telemetry (`meta_tilapia_set.csv`) matching the visual frames.
+* **Execution:** A local Python OpenCV script (`cv2.VideoCapture`) will broadcast these MP4s frame-by-frame locally, mimicking an active IP camera stream for the Vision Agent to analyze.
+
+### 4.2 Environmental APIs
+* **OpenWeatherMap API:** Polled every 5 minutes. Endpoint: `/data/2.5/weather?lat=3.0333&lon=101.6158&appid={API_KEY}`. Used to forecast thermal drift in the RAS system.
+
+---
+
+## 5. Backend Stack & Database Schemas (Deployed on EC2)
+
+### 5.1 PostgreSQL (Time-Series & State Data)
+**Table: `telemetry_logs`**
+* `id` (UUID)
+* `timestamp` (Timestamptz)
+* `tank_id` (String)
+* `do_level` (Float)
+* `ph_level` (Float)
+* `temp_c` (Float)
+* `is_override` (Boolean) - Flags manual chaos injection.
+
+**Table: `auto_feed_logs`**
+* `id` (UUID)
+* `timestamp` (Timestamptz)
+* `mass_grams` (Float)
+* `status` (String: "DISPENSED", "LOCKED_BY_AI")
+
+### 5.2 Neo4j (Biochemical Causal Graph)
+The graph database maps dependencies to prevent logical hallucinations.
+**Nodes:**
+* `Sensor` (e.g., DO_Probe, pH_Probe)
+* `Parameter` (e.g., Dissolved_Oxygen, pH, Temp)
+* `Risk` (e.g., Hypoxia, Ammonia_Toxicity)
+* `Hardware` (e.g., Aerator_Pump, Feed_Valve)
+**Edges:**
+* `(Sensor)-[:MEASURES]->(Parameter)`
+* `(Parameter)-[:INFLUENCES]->(Risk)`
+* `(Hardware)-[:MITIGATES]->(Risk)`
+
+---
+
+## 6. External Integrations
+
+### 6.1 Telegram Bot API
+* **Purpose:** Asynchronous text/diagnostic alerts.
+* **Implementation:** `requests.post(f"https://api.telegram.org/bot{TOKEN}/sendMessage", json={"chat_id": ID, "text": "URGENT: Risk trajectory updated."})`
+
+### 6.2 ElevenLabs Conversational AI (Voice Co-Pilot)
+* **Purpose:** 3 AM physical emergency escalation.
+* **Setup:** Use the `elevenlabs` Python SDK (`DefaultAudioInterface`).
+* **System Prompt:** "You are the AquaPulse Emergency Bio-Security Officer. A critical hypoxia event has been detected in Tank 1. Inform the user and ask if they want to execute emergency aeration or cancel. Wait for their voice command."
+* **Webhook Tool:** Configure an ElevenLabs Tool named `trigger_aerator`. Route the webhook through an ngrok tunnel to the local EC2 backend endpoint (`/api/v1/hardware/override`).
+
+### 6.3 ElevenLabs Text-to-SFX
+* **Purpose:** Digital physicality.
+* **Assets:** Pre-generate `.mp3` files for "Heavy industrial water pump spooling up" and "Loud metallic pneumatic valve locking". Trigger these on the frontend when hardware state changes.
+
+---
+
+## 7. Frontend UI & Dashboard Simulation
+
+**Framework:** React / TypeScript
+**Theme:** High-contrast, dark industrial UI (optimized for glare and harsh environments). No standard horizontal LLM chat windows.
+
+### 7.1 View 1: The Operator Dashboard
+* **Telemetry Panel:** Large numeric readouts for DO, pH, Temp.
+* **Vision Panel:** Rendering the mocked live RTSP stream with YOLO bounding boxes overlayed.
+* **Agent Reasoning Log:** A scrolling terminal-style log showing the internal monologue of the Causal Diagnostics Agent (e.g., `[VISION] Fish lethargy confirmed. [CAUSAL] Hypoxia imminent.`).
+* **Hardware State:** Badges indicating `Aerators: STANDBY`, `Feed Valve: ACTIVE`.
+
+### 7.2 View 2: The "Demo Chaos" Control Panel (Hidden/Admin Route)
+* **Button: [Inject DO Crash]:** Triggers a POST to override DO to 1.5 mg/L.
+* **Button: [Inject pH Spike]:** Triggers a POST to override pH to 8.5.
+* **Button: [Global Reset]:** Triggers a POST to clear Neo4j alert states, normalize PostgreSQL telemetry, and reset hardware badges to STANDBY.
+
+---
+
+## 8. The 3-Minute Hackathon Demo Execution Flow
+
+**State 0: Baseline Validation (0:00 - 1:00)**
+* Action: Show the dashboard running stable telemetry from the Zenodo dataset.
+* Script: Explain the challenge of sensor drift and the mathematical reality of $NH_3$ toxicity in high-density aquaculture. Show the OpenWeather API pulling ambient Puchong data.
+
+**State 1: Predictive Risk Simulation (1:00 - 1:45)**
+* Action: Click `[Inject pH Spike]`. 
+* System Response: Neo4j calculates toxicity curve. Action Agent locks the feed valve.
+* UI/Physicality: Play metallic locking SFX. Hardware badge turns RED (`LOCKED`). Telegram ping sounds on phone. Show the Telegram message: "Pre-emptive risk detected. Feed ratio set to 0%."
+
+**State 2: The Hardware Failure & Voice Agent (1:45 - 3:00)**
+* Action: Click `[Inject DO Crash]`.
+* System Response: Vision Agent verifies lethargy. Causal graph confirms imminent hypoxia.
+* UI/Physicality: ElevenLabs Voice Agent takes over the laptop speakers: *"Critical Hypoxia in Tank 1. Executing emergency aeration. Say Cancel or Execute."*
+* Interaction: You physically say, "Execute mitigation."
+* Resolution: Webhook fires. UI Aerator badge flashes `ACTIVE`. Heavy pump SFX plays.
+
+*End of blueprint.*

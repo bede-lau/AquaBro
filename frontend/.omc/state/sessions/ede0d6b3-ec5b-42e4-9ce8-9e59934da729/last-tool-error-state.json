@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"PYTHONIOENCODING=utf-8 PYTHONPATH=backend .venv/Scripts/python.exe -c \\\"\\nimport asyncio\\nfrom app.config import settings\\nfrom app.integrations.openweather import OpenWeatherClient\\nprint...",
+  "error": "Exit code 127\n/usr/bin/bash: line 1: .venv/Scripts/python.exe: No such file or directory",
+  "timestamp": "2026-06-24T20:43:35.049Z",
+  "retry_count": 1
+}

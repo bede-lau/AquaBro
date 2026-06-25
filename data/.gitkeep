@@ -1,0 +1,5 @@
+# Drop Zenodo Tilapia-RAS assets here:
+#   data/clips/*.mp4            (30s video clips — Vision broadcaster replays them)
+#   data/meta_tilapia_set.csv   (synchronized physical telemetry)
+# If absent, the backend synthesizes baseline telemetry so the demo still runs.
+# See docs/MANUAL_TASKS.md.

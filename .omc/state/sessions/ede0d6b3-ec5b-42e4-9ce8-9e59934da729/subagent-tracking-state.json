@@ -1,0 +1,17 @@
+{
+  "agents": [
+    {
+      "agent_id": "a9d39def945b2b5d9",
+      "agent_type": "document-specialist",
+      "started_at": "2026-06-24T20:48:48.466Z",
+      "parent_mode": "none",
+      "status": "completed",
+      "completed_at": "2026-06-24T20:51:46.844Z",
+      "duration_ms": 178378
+    }
+  ],
+  "total_spawned": 1,
+  "total_completed": 1,
+  "total_failed": 0,
+  "last_updated": "2026-06-25T01:24:24.544Z"
+}
