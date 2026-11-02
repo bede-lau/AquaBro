@@ -20,6 +20,16 @@
 
 ---
 
+
+## ▍Project gallery
+
+<table><tr>
+<td width="50%"><img src="https://raw.githubusercontent.com/bede-lau/bede-lau.github.io/main/assets/img/aquabro/aqua1.png" alt="AquaBro project screenshot, first view" /></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/bede-lau/bede-lau.github.io/main/assets/img/aquabro/aqua2.png" alt="AquaBro project screenshot, second view" /></td>
+</tr></table>
+
+<sub>Images from the [project portfolio](https://bede-lau.github.io/); they may depict an earlier build.</sub>
+
 ## ▍The problem
 
 A recirculating aquaculture tank can lose its stock because a dissolved-oxygen probe shorts, or because the water actually ran out of oxygen. Those two events look alike on one number. Total ammonia is the other trap: the toxic part is the un-ionized fraction, and that fraction moves with pH and temperature. A chat model asked to "watch the tank" does not execute that equation, and it cannot tell a dead probe from a biological crash.
