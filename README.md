@@ -1,6 +1,16 @@
 <h1 align="center">AquaBro</h1>
 <p align="center"><b>A deterministic multi-agent monitoring loop for recirculating aquaculture.</b></p>
 
+## ▍Project gallery
+
+<table><tr>
+<td width="50%"><img src="https://raw.githubusercontent.com/bede-lau/bede-lau.github.io/main/assets/img/aquabro/aqua1.png" alt="AquaBro project screenshot, first view" /></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/bede-lau/bede-lau.github.io/main/assets/img/aquabro/aqua2.png" alt="AquaBro project screenshot, second view" /></td>
+</tr></table>
+
+<sub>Images from the [project portfolio](https://bede-lau.github.io/); they may depict an earlier build.</sub>
+
+
 ## ▍At a glance
 
 ```mermaid
