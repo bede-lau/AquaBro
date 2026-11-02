@@ -55,12 +55,28 @@ biomass.
 ```
 
 **Why no Neo4j / Node:** the causal "graph" is small static domain knowledge
-(Sensor→Parameter→Risk→Hardware). Modeling it in-process gives identical
-accuracy, lower latency (no DB hop per reasoning tick), and one fewer
-failure surface for a live demo. The UI renders the same graph structure as
+(Sensor→Parameter→Risk→Hardware). Modeling it in-process avoids a database hop per reasoning tick and removes one
+service dependency in the demo. No comparative accuracy or latency benchmark is
+claimed. The UI renders the same graph structure as
 an interactive panel — the "knowledge graph" narrative is preserved.
 
 ---
+
+## ▍The incident loop
+
+| Input or boundary | Behavior |
+| --- | --- |
+| **Telemetry** | CSV or synthetic sensor data enters the monitoring loop. |
+| **Vision** | A local video feed simulates RTSP input; motion detection and a YOLO stub have different capabilities. |
+| **Diagnostics** | In-process causal rules and biochemical models evaluate sensor-to-risk relationships. |
+| **State** | A deterministic state machine tracks normal, at-risk, critical, mitigating and recovering states. |
+| **Response** | The action planner targets a hardware simulator and can send alerts through configured integrations. |
+| **Observation** | The React dashboard receives events through SSE; PostgreSQL persists recorded data. |
+
+The simulator, mock integrations and synthetic telemetry are useful for exercising the flow. They do not establish sensor accuracy, fail-safe hardware operation or suitability for unattended aquaculture.
+
+---
+
 
 ## Quick start
 
