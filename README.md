@@ -1,6 +1,13 @@
 <h1 align="center">AquaBro</h1>
 <p align="center"><b>A deterministic multi-agent monitoring loop for recirculating aquaculture.</b></p>
 
+<p align="center">
+  <img alt="Python" src="https://img.shields.io/badge/Python-3776ab?style=flat-square" />
+  <img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-008577?style=flat-square" />
+  <img alt="React" src="https://img.shields.io/badge/React-087ea4?style=flat-square" />
+  <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-4169a1?style=flat-square" />
+</p>
+
 ## ▍Project gallery
 
 <table><tr>
