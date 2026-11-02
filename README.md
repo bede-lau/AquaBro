@@ -1,4 +1,22 @@
-# AquaBro — Fault-Tolerant Multi-Agent RAS Monitoring
+<h1 align="center">AquaBro</h1>
+<p align="center"><b>A deterministic multi-agent monitoring loop for recirculating aquaculture.</b></p>
+
+## ▍At a glance
+
+```mermaid
+flowchart LR
+ A["Telemetry / synthetic data"] --> D["Causal diagnostics"]
+ B["Video motion"] --> D
+ C["Weather context"] --> D
+ D --> E["Finite-state machine"]
+ E --> F["Action planner"]
+ E --> G["SSE dashboard"]
+ F --> H["Hardware simulator<br/>alerts · voice"]
+```
+
+The demo includes simulated hardware and mock-aware integrations; see the manual tasks and runtime assumptions below.
+
+---
 
 A hybrid, fault-tolerant AI system for commercial Recirculating Aquaculture
 Systems (RAS). Deterministic multi-agent reasoning loop + biochemical math
